@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background: linear-gradient(rgb(185, 185, 185), black);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .btn {
+      background-color: black;
+      font: 300 30px Arial;
+      padding: 15px 30px;
+      border-radius: 10px;
+      border: none;
+      color: rgb(255, 0, 0);
+      transition: ease-in-out 0.2s;
+      width: 200px;
+    }
+    .tituloPrincipal {
+      font: 700 40px "Arial";
+      color: white;
+    }
+    .titulo {
+      text-align: center;
+      margin: 20px 140px;
+    }
+    .botoes {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="titulo">
+    <h1 class="tituloPrincipal">Vamos fazer um curso no Senai?</h1>
+  </div>
+  <div class="botoes">
+    <div class="botaoS">
+      <button class="btn" onclick="sim()">SIM</button>
+    </div>
+    <div class="botaoN">
+      <button id="btnNao" class="btn" onclick="desvia()" onmouseover="desvia()">NÃO</button>
+    </div>
+  </div>
+
+  <script>
+    function sim() {
+      window.location.href = ""; // coloque o link desejado aqui
+    }
+
+    function desvia() {
+      let btn = document.getElementById("btnNao");
+      btn.style.position = "absolute";
+      btn.style.bottom = geraPosition(10, 80);
+      btn.style.left = geraPosition(10, 80);
+    }
+
+    function geraPosition(min, max) {
+      return (Math.random() * (max - min) + min) + "%";
+    }
+  </script>
+</body>
+</html>
